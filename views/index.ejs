@@ -1,0 +1,126 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    </head>
+    <body>      
+        <div class="w3-container w3-gray w3-padding">
+            <h1 style="text-align: right" class="w3-font-white">STRIGGER</h1>
+        </div>
+        <div>
+            <button id="btnRule">RULEs</button>
+            <button id="btnDevice">DEVICEs</button>
+        </div>
+        <div id="configRules" class="w3-container">
+            <div class="w3-container">
+                <div class="w3-panel w3-light-gray">
+                    <h3>CONFIGURE RULES</h3>
+                </div>
+                <div class="w3-container">
+                    <div class="w3-ligh-blue w3-border">
+                        <div class="w3-panel w3-pink">
+                            <h4>TEMPERATURE</h4>
+                        </div>
+                        <div class="">
+                            <div class=" w3-margin">
+                                <label>MAX</label>
+                                <input id="tem_max" class="w3-input" type="text" placeholder="30">
+                            </div>
+                            <div class="w3-margin">
+                                    <label>MIN</label>
+                                    <input id="tem_min" class="w3-input" type="text" placeholder="30">
+                                </div>
+                                <div class="w3-margin">
+                                        <label>TIMER CONTROL</label>
+                                        <input id="tem_time" class="w3-input" type="text" placeholder="30">
+                                    </div>        
+                        </div>
+                    </div>
+                       
+                    <div class="w3-ligh-blue">
+                            <div class="w3-panel w3-teal">
+                                <h4>HUMIDITY</h4>
+                            </div>
+                            <div class="">
+                                <div class="w3-margin">
+                                    <label>MAX</label>
+                                    <input id="hum_max" class="w3-input" type="text" placeholder="30">
+                                </div>
+                                <div class="w3-margin">
+                                        <label>MIN</label>
+                                        <input id="hum_min" class="w3-input" type="text" placeholder="30">
+                                    </div>
+                                    <div class="w3-margin">
+                                            <label>TIMER CONTROL</label>
+                                            <input id="hum_time" class="w3-input" type="text" placeholder="30">
+                                        </div>
+                            </div>
+                        </div>
+                    <button id="btnSetConfigRule" class="w3-button w3-light-blue w3-round">APPLY</button>
+                </div>
+            </div>
+        </div>
+        <div id="configDevice">
+                <div class="w3-container">
+                        <div class="w3-panel w3-light-gray">
+                            <h3>CONFIGURE DEVICES</h3>
+                        </div>
+                        <div class="w3-container">
+                            <label>IP-PLC</label>
+                            <input id="ipPlc" class="w3-input" type="text" placeholder="192.168.1.10">
+                            <label>PORT</label>
+                            <input id="portPlc" class="w3-input" type="text" placeholder="3000">   
+                            <br><br>
+                            <label>IP-SENSOR</label>
+                            <input id="ipSensor" class="w3-input" type="text" placeholder="192.168.1.12">
+                            <label>PORT</label>
+                            <input id="portSensor" class="w3-input" type="text" placeholder="80"> 
+                            <br><br>  
+                            <button id="btnSetConfig" class="w3-button w3-light-blue w3-round">APPLY</button>
+                        </div>
+                    </div>
+        </div>
+        <div class="w3-row" style="display: none">
+            <div class="w3-container w3-col l6 m6  w3-border w3-round">
+                <div class="w3-panel w3-red">
+                    <h3>PLC-CONFIG</h3>    
+                </div>
+                <div class="w3-container">
+                    <label>IP</label>
+                    <input class="w3-input" type="text">
+                    <label>PORT</label>
+                    <input class="w3-input" type="text">
+                    <button class="w3-button w3-orange w3-round">SET</button>
+                </div>
+            </div>
+            <div class="w3-container w3-col l6 m6  w3-border w3-round">
+                <div class="w3-panel w3-blue">
+                    <h3>SENSOR-CONFIG</h3>
+                </div>
+                <div class="w3-container">
+                    <label>IP</label>
+                    <input class="w3-input" type="text">
+                    <label>PORT</label>
+                    <input class="w3-input" type="text">   
+                    <button class="w3-button w3-light-blue w3-round">SET</button>
+                </div>
+            </div>
+        </div>
+        <div class="w3-row" style="display: none">
+            <div class="w3-panel w3-gray">
+                <h4>LỊCH SỬ HOẠT ĐỘNG</h4>
+            </div>
+            <table class="w3-table w3-hoverable">
+                <th>
+
+                </th>
+                <tr>
+
+                </tr>
+            </table>
+        </div>
+
+    </body>
+    <script src="js/control.js"></script>
+</html>
