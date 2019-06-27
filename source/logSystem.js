@@ -7,7 +7,7 @@ function getLog(pathFile, cb){
       }
       var system = [];
       console.log(stdout);
-      var o = stdout.split("\n***")
+      var o = stdout.split("***\n")
       for(i in o){
         var temp1 = o[i].split("==");
         console.log("TEM: ", temp1)
