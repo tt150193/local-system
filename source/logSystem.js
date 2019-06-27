@@ -9,7 +9,7 @@ function getLog(pathFile, cb){
       console.log(stdout);
       var o = stdout.split("***")
       for(i in o){
-        var temp1 = i.split("==");
+        var temp1 = o[i].split("==");
         console.log("TEM: ", temp1)
         if(temp1.length == 2){
           var obj = {
