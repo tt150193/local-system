@@ -1,3 +1,4 @@
+var logSystem = require("./source/logSystem");
 var request = require('request');
 var token = "";
 var status = "LOGIN";
@@ -52,6 +53,9 @@ function updateHistory(sId, aId, sta, actionName, cb){
             console.log('error:', error); // Print the error if one occurred
             if(cb){
                 cb("ERROR")
+                logSystem.insertLog("/data/log.txt", {actionCode: aId, status: sta, actionName: actionName}, function(d){
+                    console.log("SAVE DATA");
+                });
                 return "ERROR";
             }
         }
@@ -78,6 +82,9 @@ function uploadSystem(actionCode, status, actionName,callback){
             console.log("CANNOT LOGIN");
             if(callback){
                 callback("ERROR");
+                logSystem.insertLog("/data/log.txt", {actionCode: actionCode, status: status, actionName: actionName}, function(d){
+                    console.log("SAVE DATA");
+                });
             }
             return;
         }
@@ -96,6 +103,7 @@ function uploadPlc(actionCode, status, callback){
             console.log("CANNOT LOGIN");
             if(callback){
                 callback("ERROR");
+
             }
             return;
         }
@@ -106,22 +114,6 @@ function uploadPlc(actionCode, status, callback){
             console.log(d);
         });
     });
-    /* 
-    function updateHistory(sId, aId, sta, actionName, cb){
-    console.log("UPLOAD-FUNCTION")
-    if(status == "LOGIN"){
-        console.log("LOGIN NOW");
-        return;
-    }
-        body: JSON.stringify({
-            "systemId": sId,
-            "actionCode": aId, 
-            "status": sta,
-            "ID": sId,
-            actionName: actionName
-        })
-    }, function (error, response, body) {
-    */
 }
 
 module.exports.uploadSystem = uploadSystem;

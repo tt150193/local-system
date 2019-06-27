@@ -11,10 +11,11 @@ function getLog(pathFile, cb){
       for(i in o){
         var temp1 = o[i].split("==");
         console.log("TEM: ", temp1)
-        if(temp1.length == 2){
+        if(temp1.length == 3){
           var obj = {
             actionCode: temp1[0],
-            status: temp1[1]
+            status: temp1[1],
+            actionName: temp1[2]
           }
           system.push(obj);
         } else {
@@ -50,8 +51,8 @@ function setEnviroment(pathFile, obj, cb){
 
 function insertLog(pathFile, obj, cb){
     var log_string = "";
-    if((obj.actionCode != undefined) && (obj.status != undefined)){
-      log_string += obj.actionCode + "==" + obj.status + "***";
+    if((obj.actionCode != undefined) && (obj.status != undefined) && (obj.actionName != undefined)){
+      log_string += obj.actionCode + "==" + obj.status + "==" + obj.actionName + "***";
     } else {
       console.log("NOT MATCH DEFINED LOG");
       return "ERROR";

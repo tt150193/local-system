@@ -1,3 +1,4 @@
+var logSystem = require("./source/logSystem");
 var upload = require("./requestLocalServer");
 var env = require("./source/queryFileSystem");
 var request = require('request');
@@ -35,8 +36,16 @@ d = setInterval(function(){
         var checkRuleStatus = checkRule(JSON.parse(data.data));
         
     })
+
 }, TIME_INTERVAL);    
 
+function checkLogDelay(){
+    logSystem.getLog("/data/log.txt", function(d){
+        if(d.length > 0){
+            
+        }
+    })
+}
 var objDataSensor = {
     temperature: "",
     humidity: ""
