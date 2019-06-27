@@ -10,6 +10,7 @@ function getLog(pathFile, cb){
       var o = stdout.split("***")
       for(i in o){
         var temp1 = i.split("==");
+        console.log("TEM: ", temp1)
         if(temp1.length == 2){
           var obj = {
             actionCode: temp1[0],
