@@ -84,6 +84,6 @@ function query(pathFile, amount, cb){
     });
 }
 
-module.exports.insert = insert;
-module.exports.getEnviroment = getEnviroment;
+module.exports.insertLog = insertLog;
+module.exports.getLog = getLog;
 module.exports.setEnviroment = setEnviroment;
