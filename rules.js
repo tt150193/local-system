@@ -144,12 +144,12 @@ if(JSONUPLOAD == 0){
         dataRun.watering = "false";
     } else {
         console.log("NOTHING-WATERING");
-if(JSONUPLOAD == 0) {
-    upload.uploadSystem(actionCode, "SUCCESS", "NORMAL_WATER", function(data){
-        console.log("UPLOAD LOCAL SYSTEMs");
-        console.log(data);
-    });
-}
+    if(JSONUPLOAD == 0) {
+        upload.uploadSystem(actionCode, "SUCCESS", "NORMAL_WATER", function(data){
+            console.log("UPLOAD LOCAL SYSTEMs");
+            console.log(data);
+        });
+    }
 
     }
     if(JSONUPLOAD == 0){

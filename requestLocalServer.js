@@ -66,6 +66,11 @@ function updateHistory(sId, aId, sta, actionName, cb){
     });
 }
 
+/*
+    UPLOAD KHONG DUOC
+    1. LOGIN FAIL
+    2. UPLOAD FAIL
+*/
 
 function uploadSystem(actionCode, status, actionName,callback){
     login("vo", "a12345678", function(to){
@@ -101,6 +106,22 @@ function uploadPlc(actionCode, status, callback){
             console.log(d);
         });
     });
+    /* 
+    function updateHistory(sId, aId, sta, actionName, cb){
+    console.log("UPLOAD-FUNCTION")
+    if(status == "LOGIN"){
+        console.log("LOGIN NOW");
+        return;
+    }
+        body: JSON.stringify({
+            "systemId": sId,
+            "actionCode": aId, 
+            "status": sta,
+            "ID": sId,
+            actionName: actionName
+        })
+    }, function (error, response, body) {
+    */
 }
 
 module.exports.uploadSystem = uploadSystem;
