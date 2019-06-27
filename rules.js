@@ -36,13 +36,17 @@ d = setInterval(function(){
         var checkRuleStatus = checkRule(JSON.parse(data.data));
         
     })
-
+    checkLogDelay();
 }, TIME_INTERVAL);    
 
 function checkLogDelay(){
     logSystem.getLog("/data/log.txt", function(d){
         if(d.length > 0){
-            
+            for(i in d){
+                upload.uploadSystem(d[i].actionCode, d[i].status, d[i].actionName, function(a){
+                    console.log(a);
+                });
+            }
         }
     })
 }
